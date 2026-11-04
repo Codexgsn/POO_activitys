@@ -5,28 +5,26 @@ import java.util.List;
 public class Turma {
     private int codigo;
     private int sala;
-    private String data;
+    private String horario;
 
     private Professor professor;
-    private List<Aluno> alunos = new ArrayList<>();
+    private List<Aluno> alunos;
 
-    public Turma(int codigo, int sala, String data, Professor professor, List<Aluno> alunos) {
+    public Turma(int codigo, int sala, String horario, Professor professor) {
         this.codigo = codigo;
         this.sala = sala;
-        this.data = data;
+        this.horario = horario;
         this.professor = professor;
-        this.alunos = alunos;
+        this.alunos = new ArrayList<>();
     }
 
-    public boolean estaAberta(){
-        return true;
+    public void listarAlunos(){
+        for (Aluno alunos: getAlunos()){
+            System.out.println("Aluno: " + alunos.getName() + " matricula: " + alunos.getMatricula() + " turma: " + this.getCodigo() + " professor: " + professor.getName());
+        }
     }
 
-    public void setProfessor (Professor professor){
-        this.professor = professor;
-    }
-
-    public void setAluno(Aluno aluno){
+    public void incluirAluno(Aluno aluno){
         this.alunos.add(aluno);
     }
 
@@ -46,11 +44,27 @@ public class Turma {
         this.sala = sala;
     }
 
-    public String getData() {
-        return data;
+    public String getHorario() {
+        return horario;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 }
