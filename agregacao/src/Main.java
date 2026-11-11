@@ -11,11 +11,22 @@ void main() {
     Universidade u3 = new Universidade("Universidade Estadual de Campinas", "46068425000133");
 
     u1.adicionarProfessor(p1);
+    u1.adicionarProfessor(p3);
     u2.adicionarProfessor(p2);
     u3.adicionarProfessor(p3);
-    p1.lecionar();
-    p2.lecionar();
-    p3.lecionar();
+
+    u1.listarProfessorFac();
+    u3.listarProfessorFac();
+    System.out.println("||||||||||||||||||||||||");
+    p3.setNome("rircado");
+
+    u1.listarProfessorFac();
+    u3.listarProfessorFac();
+
+    u1.getProfessores().remove(p3);
+
+
+
 
 
 }

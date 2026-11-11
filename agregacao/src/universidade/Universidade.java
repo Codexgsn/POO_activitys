@@ -13,9 +13,14 @@ public class Universidade {
         this.professores = new ArrayList<>();
     }
 
-    public void adicionarProfessor(Professor professores){
-        this.professores.add(professores);
-        this.professores
+    public void adicionarProfessor(Professor professor){
+        this.professores.add(professor);
+    }
+
+    public void listarProfessorFac(){
+        for (Professor professor: professores){
+            System.out.println("Universidade: " + this.nome + " Professores: " + professor.getNome());
+        }
     }
 
     public String getNome() {
@@ -32,6 +37,14 @@ public class Universidade {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    public List<Professor> getProfessores() {
+        return professores;
+    }
+
+    public void removerProfessor(Professor professor){
+        professores.remove(professor);
     }
 
 }
